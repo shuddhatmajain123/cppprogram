@@ -1,0 +1,30 @@
+#include <simplecpp>
+
+main_program {
+    long long int N,x1,y1,x2,y2,x3,y3, notco=0;
+    float area,A1,A2,A3;
+    cin >> N;
+    repeat(N){
+        cin >> x1>>y1>>x2>>y2>>x3>>y3;
+        area = ((x1-x3)*(y2-y1)-(x1-x2)*(y3-y1))/2;
+        if(area < 0){
+            area = -1*(area);
+        }
+        A1 = ((x1-x2)*(-y1)-(x1)*(y2-y1))/2;
+        A2 = ((-x3)*(y2)-(-x2)*(y3))/2;
+        A3 = ((x1 -x3)*(-y1)-(x1)*(y3-y1))/2;
+        if(A1 < 0){
+            A1 = -1*(A1);
+        }
+        if(A2 < 0){
+            A2 = -1*(A2);
+        }
+        if(A3  < 0){
+            A3 = -1*(A3);
+        }
+        if(area == A1 + A2 + A3){
+            notco++;
+        }
+    }
+    cout << notco;
+}
